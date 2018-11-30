@@ -1,6 +1,7 @@
 .RadioItem {
     display: inline-block;
-    width: 45.6%;
+    width: 41%;
+    margin-left: 10px
 }
 .am-button {
     background: #7cba59;

@@ -8,8 +8,10 @@ import { BrowserRouter,Route} from 'react-router-dom'
 
 import reducers from './reducer'
 import './config'
+import './index.css'
 import Login from './container/login/login'
 import Register from './container/register/register'
+ import AuthRoute from './component/authroute/authroute'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, /* preloadedState, */ composeEnhancers(
@@ -21,6 +23,7 @@ const store = createStore(reducers, /* preloadedState, */ composeEnhancers(
     (<Provider store={store}>
       <BrowserRouter>
         <div>
+          <AuthRoute></AuthRoute>
           <Route path='/login' component={Login}></Route>
           <Route path='/register' component={Register}></Route>
         </div>
