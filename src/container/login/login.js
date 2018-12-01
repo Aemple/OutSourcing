@@ -24,8 +24,8 @@ class Login extends React.Component {
         }
     }
     handleLogin(){
-		this.props.login(this.props.state)
-	}
+        this.props.login(this.props.state)
+    }
     render () {
         return (
              <div>

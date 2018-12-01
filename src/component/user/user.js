@@ -27,7 +27,6 @@ class User extends React.Component{
 	render(){
 		const props = this.props
 		const Item = List.Item
-		const Brief = Item.Brief
 		return props.user?(
 			<div>
 				<Result
@@ -35,16 +34,41 @@ class User extends React.Component{
 					title={props.user}
 					message={props.type==='boss'?props.company:null}
 				/>
-				
-				<List renderHeader={()=>'简介'}>
+				<List renderHeader={() => '专项功能'}>
 					<Item
-						multipleLine
-					>
-						{props.title}
-						{props.desc.split('\n').map(v=><Brief key={v}>{v}</Brief>)}
-						{props.money?<Brief>薪资:{props.money}</Brief>:null}
+						thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+						arrow="horizontal"
+						extra={'116条'}
+					>My wallet</Item>
+					<WhiteSpace></WhiteSpace>
+					<Item
+						thumb="https://zos.alipayobjects.com/rmsportal/UmbJMbWOejVOpxe.png"
+						arrow="horizontal"
+						extra={'116条'}
+						>
+					My Cost Ratio
 					</Item>
-					
+					<WhiteSpace></WhiteSpace>
+					<Item
+						thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+						arrow="horizontal"
+						extra={'116条'}
+					>My wallet</Item>
+					<WhiteSpace></WhiteSpace>
+					<Item
+						thumb="https://zos.alipayobjects.com/rmsportal/UmbJMbWOejVOpxe.png"
+						arrow="horizontal"
+						extra={'116条'}
+						>
+						My Cost Ratio
+					</Item>
+				</List>
+				<List renderHeader={() => '意见(suggestion)'}>
+				    <Item
+						thumb="https://zos.alipayobjects.com/rmsportal/UmbJMbWOejVOpxe.png"
+						>
+						My Cost Ratio
+					</Item>
 				</List>
 				<WhiteSpace></WhiteSpace>
 				<Button onClick={this.logout}>退出登录</Button>
