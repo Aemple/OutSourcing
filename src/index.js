@@ -4,7 +4,7 @@ import { createStore, applyMiddleware,compose } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter,Route} from 'react-router-dom'
+import { BrowserRouter,Route,Switch} from 'react-router-dom'
 
 import reducers from './reducer'
 import './config'
@@ -12,6 +12,9 @@ import './index.css'
 import Login from './container/login/login'
 import Register from './container/register/register'
  import AuthRoute from './component/authroute/authroute'
+ import BossInfo from './container/bossinfo/bossinfo'
+ import GeniusInfo from './container/geniusinfo/geniusinfo'
+ import Dashboard from './component/dashboard/dashboard'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, /* preloadedState, */ composeEnhancers(
@@ -24,8 +27,13 @@ const store = createStore(reducers, /* preloadedState, */ composeEnhancers(
       <BrowserRouter>
         <div>
           <AuthRoute></AuthRoute>
+          <Switch>
+          <Route path='/bossinfo' component={BossInfo}></Route>
+          <Route path='/geniusinfo' component={GeniusInfo}></Route>
           <Route path='/login' component={Login}></Route>
           <Route path='/register' component={Register}></Route>
+          <Route component={Dashboard}></Route>
+          </Switch>
         </div>
       </BrowserRouter>
     </Provider>), document.getElementById('root'));

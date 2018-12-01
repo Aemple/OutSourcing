@@ -7,3 +7,22 @@
 h2 {
     text-align: center
 }
+
+.am-tab-bar{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: auto !important;
+}
+.fixd-header.am-navbar{
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+.page-content{
+	padding:45px 5px;
+}
+.am-tab-bar-tab-title {
+	color: #7cba59 !important;
+	font-weight: bold;
+}
