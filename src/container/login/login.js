@@ -4,6 +4,7 @@ import { List, InputItem, WingBlank, WhiteSpace, Button,Toast} from 'antd-mobile
 import {login} from '../../redux/user.redux'
 import { connect } from 'react-redux'
 import {Redirect} from 'react-router-dom'
+import From from '../../component/form/form.js'
 import Logo from '../../component/logo/logo'
 import './login.css'
 
@@ -11,39 +12,19 @@ import './login.css'
 	state=>state.user,
 	{login}
 )
+@From
 class Login extends React.Component {
     constructor (props) {
         super(props);
-        this.state = {
-            hasError: false,
-            user: '',
-            pwd: ''
-        }
         this.handleLogin = this.handleLogin.bind(this)
     }
     onErrorClick = () => {
-        if (this.state.hasError) {
+        if (this.props.state.hasError) {
         Toast.info('Please enter 11 digits');
         }
     }
-    handleChange(key,val) {
-        if (key==='user') {
-            if (val.replace(/\s/g, '').length < 11) {
-                this.setState({
-                    hasError: true,
-                });
-            } else {
-                this.setState({
-                    hasError: false,
-                });
-            }
-        } 
-        this.setState({
-            [key]:val
-        })
-    }
     handleLogin(){
-		this.props.login(this.state)
+		this.props.login(this.props.state)
 	}
     render () {
         return (
@@ -57,16 +38,16 @@ class Login extends React.Component {
                         <InputItem
                         type="phone"
                         placeholder="Please input your phone"
-                        error={this.state.hasError}
+                        error={this.props.state.hasError}
                         onErrorClick={this.onErrorClick}
-                        onChange={v=>this.handleChange('user',v)}
-                        value={this.state.user}
+                        onChange={v=>this.props.handleChange('user',v)}
+                        value={this.props.state.user}
                     >手机 :</InputItem>
                         <WhiteSpace></WhiteSpace>
                         <InputItem 
                           placeholder="input your password"
                           type="password"
-                          onChange={v=>this.handleChange('pwd',v)}
+                          onChange={v=>this.props.handleChange('pwd',v)}
                           >密码 :</InputItem>
                     </List>
                     <WhiteSpace></WhiteSpace>

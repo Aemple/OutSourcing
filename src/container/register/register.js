@@ -5,47 +5,28 @@ import './register.css'
 import {connect} from 'react-redux'
 import {regisger} from '../../redux/user.redux'
 import {Redirect} from 'react-router-dom'
+import From from '../../component/form/form.js'
 
 @connect(
 	state=>state.user,
 	{regisger}
 )
-
+@From
 class Register extends React.Component {
     constructor (props) {
         super(props);
-        this.state = {
-            hasError: false,
-            user: '',
-            pwd: '',
-            repeatpwd: '',
-            type:'genius' // 或者boss
-        }
         this.handleRegister = this.handleRegister.bind(this)
     }
     onErrorClick = () => {
-        if (this.state.hasError) {
+        if (this.props.state.hasError) {
         Toast.info('Please enter 11 digits');
         }
     }
-    handleChange(key,val) {
-        if (key==='user') {
-            if (val.replace(/\s/g, '').length < 11) {
-                this.setState({
-                    hasError: true,
-                });
-            } else {
-                this.setState({
-                    hasError: false,
-                });
-            }
-        } 
-        this.setState({
-            [key]:val
-        })
+    componentDidMount() {
+        this.props.handleChange('type','genius')
     }
     handleRegister() {
-        this.props.regisger(this.state)
+        this.props.regisger(this.props.state)
     }
     render () {
         const RadioItem = Radio.RadioItem
@@ -60,36 +41,36 @@ class Register extends React.Component {
                         <InputItem
                         type="phone"
                         placeholder="Please input your phone"
-                        error={this.state.hasError}
+                        error={this.props.state.hasError}
                         onErrorClick={this.onErrorClick}
-                        onChange={v=>this.handleChange('user',v)}
-                        user={this.state.value}
+                        onChange={v=>this.props.handleChange('user',v)}
+                        user={this.props.state.value}
                     >手机 :</InputItem>
                         <WhiteSpace></WhiteSpace>
                         <InputItem 
                            placeholder="input your password" 
                            type="password" 
-                           onChange={v=>this.handleChange('pwd',v)}
+                           onChange={v=>this.props.handleChange('pwd',v)}
                         >密码 :</InputItem>
                         <WhiteSpace></WhiteSpace>
                         <InputItem 
                            placeholder="input your password again" 
                            type="password"
-                           onChange={v=>this.handleChange('repeatpwd',v)}
+                           onChange={v=>this.props.handleChange('repeatpwd',v)}
                            >确认密码 :</InputItem>
                     </List>
                     <WhiteSpace></WhiteSpace>
                     <RadioItem
                         className = 'RadioItem'
-                        checked={this.state.type ==='genius'}
-                        onChange={()=>this.handleChange('type','genius')}
+                        checked={this.props.state.type ==='genius'}
+                        onChange={()=>this.props.handleChange('type','genius')}
 					>
 						接项目
 					</RadioItem>
 					<RadioItem
                         className = 'RadioItem'
-                        checked={this.state.type==='boss'}
-						onChange={()=>this.handleChange('type','boss')}
+                        checked={this.props.state.type==='boss'}
+						onChange={()=>this.props.handleChange('type','boss')}
 					>
 						派项目
 					</RadioItem>
