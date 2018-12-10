@@ -8,12 +8,29 @@ h2 {
     text-align: center
 }
 
+.uimg {
+	width: 340px;
+	height: 120px;
+}
+
+.desc {
+	text-align: center;
+}
+
+.am-card {
+	background: #f3f3f3 !important;
+	margin-bottom: 12px;
+	box-shadow: 6px 9px 13px #b4adad, -7px 9px 13px #bab8ba;
+}
+
 .am-tab-bar{
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+	z-index: 999;
 	height: auto !important;
 }
+
 .fixd-header.am-navbar{
 	position: fixed;
 	top: 0;
@@ -27,6 +44,7 @@ h2 {
 	color: #7cba59 !important;
 	font-weight: bold;
 }
+
 
 #chat-page .chat-me .am-list-extra{
 	flex-basis:auto;
@@ -43,7 +61,7 @@ h2 {
 }
 .stick-footer{
 	z-index:10;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width:100%;
 }

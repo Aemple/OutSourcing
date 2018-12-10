@@ -36,36 +36,35 @@ class User extends React.Component{
 				/>
 				<List renderHeader={() => '专项功能'}>
 					<Item
-						thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+						thumb={require(`./img/gerenxinxi.png`)}
 						arrow="horizontal"
-						extra={'116条'}
-					>My wallet</Item>
+					>个人信息</Item>
 					<WhiteSpace></WhiteSpace>
 					<Item
-						thumb="https://zos.alipayobjects.com/rmsportal/UmbJMbWOejVOpxe.png"
+						thumb={require(`./img/icondd.png`)}
 						arrow="horizontal"
-						extra={'116条'}
+						extra={'16条'}
 						>
-					My Cost Ratio
+					我的订单
 					</Item>
 					<WhiteSpace></WhiteSpace>
 					<Item
-						thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+						thumb={require(`./img/fuli.png`)}
 						arrow="horizontal"
-						extra={'116条'}
-					>My wallet</Item>
+						extra={'8条'}
+					>福利专区</Item>
 					<WhiteSpace></WhiteSpace>
 					<Item
-						thumb="https://zos.alipayobjects.com/rmsportal/UmbJMbWOejVOpxe.png"
+						thumb={require(`./img/shoucang.png`)}
 						arrow="horizontal"
-						extra={'116条'}
+						extra={'112条'}
 						>
-						My Cost Ratio
+						我的收藏
 					</Item>
 				</List>
 				<List renderHeader={() => '意见(suggestion)'}>
 				    <Item
-						thumb="https://zos.alipayobjects.com/rmsportal/UmbJMbWOejVOpxe.png"
+						thumb={require(`./img/yijian.png`)}
 						>
 						My Cost Ratio
 					</Item>

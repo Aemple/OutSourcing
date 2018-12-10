@@ -9,7 +9,7 @@ class UserCard extends React.Component{
 		userlist: PropTypes.array.isRequired
 	}
 	handleClick(v){
-		this.props.history.push(`/chat/${v.user}`)
+		this.props.history.push(`/chat/${v._id}`)
 	}
 	render(){
 		const Header = Card.Header
@@ -29,13 +29,14 @@ class UserCard extends React.Component{
 						></Header>
 						<Body>
 							{v.type==='boss'? <div>公司:{v.company}</div> :null}
-
-							{v.desc.split('\n').map(d=>(
+							<img className="uimg" alt="" src={require(`./img/js5.png`)}></img>
+							{ /* {v.descv.desc.split('\n').map(d=>(
 								<div key={d}>{d}</div>
-							))}
+							))} */}
+							<p className="desc">{v.desc}</p>
 							{v.type==='boss'? <div>薪资:{v.money}</div> :null}
 						</Body>
-						<Card.Footer content="footer content" extra={<div>extra footer content</div>} />
+						<Card.Footer content="八折优惠，质量可靠" extra={<div>extra footer content</div>} />
 					</Card>):null
 
 				))}

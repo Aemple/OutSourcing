@@ -49,7 +49,7 @@ class Genius extends React.Component{
 						}}
 						>
 						<img
-							src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+							src={`https://img.alicdn.com/imgextra/i4/242799881/TB2OIMDdTAKL1JjSZFCXXXFspXa_!!242799881.jpg`}
 							alt=""
 							style={{ width: '100%', verticalAlign: 'top' }}
 							onLoad={() => {
@@ -62,7 +62,7 @@ class Genius extends React.Component{
 					))}
 				</Carousel>
 				<NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}>
-				  Notice: The arrival time of incomes and transfers of Yu &#39;E Bao will be delayed during National Day.
+				  Notice: 全球外包领导者成都大学入驻平台  &#39; 全球外包领导者成都大学入驻平台.
 				</NoticeBar>
 				 <UserCard userlist={this.props.userlist}></UserCard>
 			</WingBlank>
