@@ -8,7 +8,7 @@
 
 📡 网络请求：axios + socket.io 
 
-🎈 页面相应式框架：antd mobile(2.2.6)
+🎈 页面相应式框架：Ant Design(2.2.6)
 
 ✏️ 后台：express + mongoDB
 
