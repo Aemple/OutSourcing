@@ -45,11 +45,6 @@ npm run build
 
 ## 项目预览
 ~~https://money.aemple.top~~ (服务器到期，无法预览了)
-### 预览图
-![注册界面](Read/zc.gif)
-![登录界面](Read/dl.gif)
-![聊天界面](Read/lt.gif)
-![退出界面](Read/tc.gif)
 
 ## 项目目录
 
